@@ -52,6 +52,7 @@ task:
 #  windows_x86_64_cargo_cache:
 #    folder: $CARGO_HOME\registry
 #    fingerprint_script: Get-Content Cargo.lock
+  long_paths_enabled_script: "reg import .cirrus\\windows\\long_paths_enabled.reg"
   install_rustup_script: "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -URI https://win.rustup.rs -OutFile rustup-init.exe; ./rustup-init.exe -y --default-toolchain nightly"
   << : *x86_64_TASK_TEMPLATE
 #  before_cache_script: Remove-Item $CARGO_HOME\registry\index -Recurse -Force
