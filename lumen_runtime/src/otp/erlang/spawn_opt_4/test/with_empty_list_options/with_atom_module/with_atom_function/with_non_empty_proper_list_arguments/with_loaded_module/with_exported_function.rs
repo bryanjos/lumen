@@ -1,5 +1,6 @@
 use super::*;
 
+#[cfg(not(windows))]
 mod with_arity;
 
 #[test]
