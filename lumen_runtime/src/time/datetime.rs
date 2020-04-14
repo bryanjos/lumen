@@ -16,6 +16,14 @@ pub fn local_now() -> [usize; 6] {
     get_local_now()
 }
 
+pub fn local_datetime_to_utc_datetime(datetime: [usize; 6]) -> [usize; 6] {
+    convert_local_datetime_to_utc_datetime(datetime)
+}
+
+pub fn utc_datetime_to_local_datetime(datetime: [usize; 6]) -> [usize; 6] {
+    convert_utc_datetime_to_local_datetime(datetime)
+}
+
 pub fn local_date() -> [usize; 3] {
     let datetime: [usize; 6] = get_local_now();
     [datetime[0], datetime[1], datetime[2]]
